@@ -15,7 +15,7 @@ public class HumanPlayer extends Player{
 	@Override
 	public int generateRoshambo() {
 		
-		return getRoshambo();
+		return super.getRoshambo();
 	}
 
 	

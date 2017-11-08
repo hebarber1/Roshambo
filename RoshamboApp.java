@@ -67,52 +67,64 @@ public class RoshamboApp {
 		Player opponentPlayer = null;
 		if(opponent.equalsIgnoreCase("rock")) {
 			opponentPlayer = new RockPlayer();		
-			
+			//opponentPlayer.setRoshambo(1);
 		}
 		
 		else if (opponent.equalsIgnoreCase("random")); {
 			opponentPlayer = new RandomPlayer();
-			
+			//opponentPlayer.setRoshambo(generateRoshambo);
 		}
 		
 		//10. Display match results
 		getResults(humanPlayer, opponentPlayer);
 		System.out.println(userName +": " + choice);
-		System.out.println(opponentPlayer + ": " + Roshambo);
-		System.out.println(getResults);
-
+		System.out.println(opponentPlayer + ": " + opponentPlayer.generateRoshambo());
+//		System.out.println(getResults);
+		
+		Scanner sc = null;
+		Validator.getString(sc, "Would you like to play again (y/n)?");
+		if(s = "n") {
+			return;
+		}
+		else {
+			System.out.println("Goodbye");
+		}
+		
 	}
 
 	private static void getResults(Player humanPlayer, Player opponentPlayer) {
 		// need to use some random function to generate random code for 
 		// Rock(1), Paper(2), Scissors(3) for each player 
 		//i.e. humanPlayer and opponentPlayer 
-		while (choice = 0) {
-			if (Roshambo = 0) {
+		int choice = humanPlayer.generateRoshambo();
+		int opponentChoice = opponentPlayer.generateRoshambo();
+		
+		while (choice == 0) {
+			if (opponentChoice == 0) {
 				System.out.println("Draw!");
 			}
-			else if (Roshambo = 1) {
+			else if (opponentChoice == 1) {
 				System.out.println(opponentPlayer + " wins!");
 			}
 			else {
-				System.out.println(userName + " wins");
+				System.out.println(humanPlayer.getName() + " wins");
 			}
-		while (choice = 1) {
-			if(Roshambo = 0) {
+		while (choice == 1) {
+			if(opponentChoice == 0) {
 				System.out.println(opponentPlayer + " wins!");
 			}
-			else if (Roshambo = 1) {
+			else if (opponentChoice == 1) {
 				System.out.println("Draw!");
 			}
 			else {
-				System.out.println(userName + " wins!");
+				System.out.println(humanPlayer.getName() + " wins!");
 			}
-		while (choice = 2) {
-			if (Roshambo = 0) {
+		while (choice == 2) {
+			if (opponentChoice == 0) {
 				System.out.println(opponentPlayer + " wins!");
 			}
-			else if (Roshambo = 1) {
-				System.out.println(userName + " wins!");
+			else if (opponentChoice == 1) {
+				System.out.println(humanPlayer.getName() + " wins!");
 			}
 			else {
 				System.out.println("Draw!");
@@ -126,4 +138,6 @@ public class RoshamboApp {
 		
 	}
 
+	
+	
 }

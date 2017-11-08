@@ -10,6 +10,7 @@ public abstract class Player {
 	private String name;
 	private int Roshambo;
 	
+	
 	public abstract int generateRoshambo();
 	
 	public String getName() {
@@ -24,4 +25,6 @@ public abstract class Player {
 	public void setRoshambo(int roshambo) {
 		this.Roshambo = roshambo;
 	}
+	
+	
 }
